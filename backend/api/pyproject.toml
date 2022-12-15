@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "gha-sandbox"
+version = "0.1.0"
+description = "A sandbox repo to try out github actions."
+authors = ["yar-jul"]
+license = "MIT License"
+readme = "README.md"
+packages = [
+    { include = "api", from = "src" },
+    { include = "cli.py", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.87.0"
+uvicorn = "^0.19.0"
+pydantic = "^1.10.2"
+typer = "^0.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+
+[tool.poetry.scripts]
+api = "cli:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
