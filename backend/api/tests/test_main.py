@@ -8,7 +8,7 @@ client = TestClient(app)
 def test_ping():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"health": "ok"}
+    assert response.json() == {"health": "not ok"}
 
 
 def test_hello():
