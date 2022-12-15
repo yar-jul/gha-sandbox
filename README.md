@@ -1,2 +1,3 @@
 # gha-sandbox
-github actions sandbox
+
+GitHub Actions sandbox
