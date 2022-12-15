@@ -1,12 +1,12 @@
-name: run back-end tests
+name: tests
 run-name: ${{ github.actor }}, tests
 #on:
 #  pull_request:
 #    branches:
 #      - main
-on: [push]
+on: [ push ]
 jobs:
-  run-tests-with-pytest:
+  back-end-tests:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -26,4 +26,4 @@ jobs:
       - name: run tests
         working-directory: backend/api
         run: |
-          make test
+          poetry run python -m pytest tests/
