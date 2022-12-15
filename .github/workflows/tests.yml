@@ -1,11 +1,12 @@
 name: run back-end tests
+run-name: ${{ github.actor }}, tests
 #on:
 #  pull_request:
 #    branches:
 #      - main
 on: [push]
 jobs:
-  test:
+  run-tests-with-pytest:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,6 +17,8 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
+      - name: install poetry
+        uses: snok/install-poetry@v1
       - name: install
         working-directory: backend/api
         run: |
