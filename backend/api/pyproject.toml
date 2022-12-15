@@ -16,9 +16,12 @@ fastapi = "^0.87.0"
 uvicorn = "^0.19.0"
 pydantic = "^1.10.2"
 typer = "^0.7.0"
+httpx = "^0.23.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.0"
+isort = "^5.11.2"
+black = "^22.12.0"
 
 [tool.poetry.scripts]
 api = "cli:cli"
